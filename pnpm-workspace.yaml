@@ -1,2 +1,5 @@
 verifyDepsBeforeRun: install
 packages:
+minimumReleaseAgeExclude:
+  - vite-plus
+  - "@voidzero-dev/*"
