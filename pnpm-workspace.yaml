@@ -1,4 +1,6 @@
 verifyDepsBeforeRun: install
+minimumReleaseAge: 60
+blockExoticSubdeps: false
 minimumReleaseAgeExclude:
   - "@oxc-parser/*"
   - "@oxc-project/*"
@@ -27,4 +29,6 @@ allowBuilds:
   workerd: false
 overrides:
   esbuild: 0.28.0
+  vite: "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@1856"
+  vitest: "4.1.9"
 packages:
