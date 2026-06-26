@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import Vue from "@vitejs/plugin-vue";
-import { defineConfig } from "vite-plus";
+import { defineConfig, lazyPlugins } from "vite-plus";
 
 // Resolve the oxc sibling repo directory. In a normal checkout it's at ../oxc,
 // but when running from a git worktree the relative path differs. Fall back to
@@ -142,5 +142,5 @@ export default defineConfig({
       allow: [import.meta.dirname, oxcPlayground],
     },
   },
-  plugins: [Vue(), tailwindcss()],
+  plugins: lazyPlugins(() => [Vue(), tailwindcss()]),
 });
