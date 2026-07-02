@@ -1,24 +1,25 @@
-verifyDepsBeforeRun: install
+minimumReleaseAge: 60
 minimumReleaseAgeExclude:
-  - "@oxc-parser/*"
+  - vite-plus
+  - "@voidzero-dev/*"
   - "@oxc-project/*"
+  - "@oxlint/*"
   - "@oxfmt/*"
   - "@oxlint-tsgolint/*"
-  - "@oxlint/*"
   - "@rolldown/*"
   - "@tsdown/*"
+  - oxlint
+  - oxfmt
+  - oxlint-tsgolint
+  - tsdown
+  - rolldown
+  - "@oxc-parser/*"
   - "@vitejs/devtools"
   - "@vitest/*"
-  - "@voidzero-dev/*"
   - oxc-parser
-  - oxfmt
-  - oxlint
-  - oxlint-tsgolint
-  - rolldown
-  - tsdown
   - vite
-  - vite-plus
   - vitest
+verifyDepsBeforeRun: install
 allowBuilds:
   better-sqlite3: false
   esbuild: false
@@ -27,4 +28,13 @@ allowBuilds:
   workerd: false
 overrides:
   esbuild: 0.28.0
+  vite: "catalog:"
 packages:
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.1d7ba811f0e456640b0e761e8e8acf77d1ad3251
+  vite-plus: 0.0.0-commit.1d7ba811f0e456640b0e761e8e8acf77d1ad3251
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
